@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    @microposts = current_user.feed_microposts.order(id: :desc).page(params[:page])
+    @microposts = current_user.microposts.order(id: :desc).page(params[:page])
     counts(@user)
   end
 
